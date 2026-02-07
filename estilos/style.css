@@ -7,6 +7,8 @@
     padding: 0px;
 }
 
+/*index*/
+
 body {
     background-color: rgba(101, 101, 101, 0.552);
 }
@@ -20,11 +22,48 @@ header > h1 {
     text-align: center;
     color: red;
 }
-header > p {
+.header-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.header-row > p {
     text-align: center;
     font-size: 20px;
     color: red;
-    padding: 10px;
+    padding: 0;
+    grid-column: 2;
+    justify-self: center;
+    margin: 0;
+}
+
+.header-row .back-button {
+    grid-column: 1;
+    justify-self: start;
+    margin: 0;
+}
+
+.header-row::after {
+    content: "";
+    grid-column: 3;
+}
+
+.back-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 6px 10px;
+    background-color: rgb(83, 83, 83);
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgb(154, 154, 154);
+    border-radius: 6px;
+}
+
+.back-button:hover {
+    background-color: rgb(70, 70, 70);
 }
 
 menu > ul > li > a {
@@ -57,6 +96,7 @@ main {
     border-radius: 10px;
 }
 
+
 article > h2 {
     padding-bottom: 20px;
     text-align: center;
@@ -67,3 +107,55 @@ article > p {
     margin-bottom: 20px;
     text-indent: 20px;
 }
+
+/*fighters*/
+
+
+.fighters-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fighter-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    background-color: #c0c0c0be;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.fighter-info {
+    flex: 1;
+}
+
+.fighter-info h2 {
+    margin-bottom: 8px;
+}
+
+.fighter-info p {
+    margin: 4px 0;
+    text-align: left;
+    text-indent: 0;
+}
+
+.fighter-photo {
+    width: 140px;
+    height: 140px;
+    flex: 0 0 140px;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ccc;
+}
+
+.fighter-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
