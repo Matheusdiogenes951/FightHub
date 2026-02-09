@@ -10,7 +10,7 @@ O projeto foi desenvolvido com foco em **front-end**, organização de interface
 
 Acesse o site online:
 
-👉 https://fighthub.vercel.app/
+👉 https://fighthub-jet.vercel.app/
 
 ---
 
