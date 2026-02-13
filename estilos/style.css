@@ -240,4 +240,41 @@ article {
     }
 }
 
+/*estilos de luta*/
+
+.styles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.style-card {
+    background-color: #c0c0c0be;
+    border: 1px solid #d0d0d0;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.style-card h3 {
+    color: #1a1a1a;
+    font-size: 18px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.style-card p {
+    color: #1f1f1f;
+    margin: 6px 0;
+    line-height: 1.5;
+    text-indent: 0;
+}
+
+@media (max-width: 900px) {
+    .styles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
