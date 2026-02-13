@@ -250,7 +250,7 @@ article {
 }
 
 .style-card {
-    background-color: #c0c0c0be;
+    background-color: #474747ad;
     border: 1px solid #d0d0d0;
     border-radius: 10px;
     padding: 12px;
@@ -265,7 +265,7 @@ article {
 }
 
 .style-card p {
-    color: #1f1f1f;
+    color: #ffffff;
     margin: 6px 0;
     line-height: 1.5;
     text-indent: 0;
