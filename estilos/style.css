@@ -298,6 +298,11 @@ article {
         font-size: 16px;
         line-height: 1.3;
     }
+    .fight-card {
+    padding: 6px;
+    gap: 0px;
+    padding-top: 10px;
+    }
 }
 
 /*estilos de luta*/
