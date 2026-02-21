@@ -1,9 +1,15 @@
 function mudouTamanho() {
     const itens = document.getElementById('itens');
+    const menuToggle = document.getElementById('menu-toggle');
     if (!itens) return;
 
-    // Mantem o menu visivel em qualquer tamanho de tela.
-    itens.style.display = '';
+    if (window.innerWidth > 900) {
+        itens.classList.remove('open');
+        if (menuToggle) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Abrir menu');
+        }
+    }
 }
 
 // Mantem compatibilidade com o nome usado no HTML.
@@ -12,8 +18,10 @@ function mudoutamanho() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    const itens = document.getElementById('itens');
+    const menuToggle = document.getElementById('menu-toggle');
     const dropdownLinks = document.querySelectorAll('.menu-dropdown > a');
-    if (!dropdownLinks.length) return;
+    if (!itens) return;
 
     function isMobileMenu() {
         return window.innerWidth <= 900;
@@ -25,6 +33,26 @@ document.addEventListener('DOMContentLoaded', function () {
             item.classList.remove('open');
             const link = item.querySelector(':scope > a');
             if (link) link.setAttribute('aria-expanded', 'false');
+        });
+    }
+
+    function closeMobileMenu() {
+        if (isMobileMenu()) {
+            itens.classList.remove('open');
+        }
+        if (menuToggle) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Abrir menu');
+        }
+    }
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function () {
+            const willOpen = !itens.classList.contains('open');
+            itens.classList.toggle('open', willOpen);
+            menuToggle.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+            menuToggle.setAttribute('aria-label', willOpen ? 'Fechar menu' : 'Abrir menu');
+            if (!willOpen) closeAllDropdowns();
         });
     }
 
@@ -48,11 +76,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('click', function (event) {
         if (!isMobileMenu()) return;
+        const clickedToggle = event.target.closest('#menu-toggle');
         const clickedInsideMenu = event.target.closest('menu');
-        if (!clickedInsideMenu) closeAllDropdowns();
+        if (clickedToggle) return;
+        if (!clickedInsideMenu) {
+            closeMobileMenu();
+            closeAllDropdowns();
+        }
     });
 
     window.addEventListener('resize', function () {
-        if (!isMobileMenu()) closeAllDropdowns();
+        if (!isMobileMenu()) {
+            closeMobileMenu();
+            closeAllDropdowns();
+        }
     });
 });

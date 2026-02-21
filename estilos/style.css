@@ -19,6 +19,11 @@ header {
     border-bottom: 1px solid #2a2a2a;
 }
 
+.header-top {
+    position: relative;
+}
+
+.header-top > h1,
 header > h1 {
     padding: 16px 10px 6px;
     text-align: center;
@@ -75,6 +80,33 @@ header > p {
 }
 
 .back-button:hover {
+    background-color: rgb(70, 70, 70);
+}
+
+.menu-toggle {
+    display: none;
+    margin: 0;
+    width: 42px;
+    height: 36px;
+    padding: 7px 8px;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    background-color: #2a2a2a;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #f2f2f2;
+}
+
+.menu-toggle span + span {
+    margin-top: 6px;
+}
+
+.menu-toggle:hover {
     background-color: rgb(70, 70, 70);
 }
 
@@ -152,6 +184,7 @@ menu > ul > li {
 menu > ul {
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     align-items: center;
 }
@@ -289,6 +322,60 @@ article {
 }
 
 @media (max-width: 900px) {
+    .header-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 10px 6px;
+    }
+
+    .header-top > h1 {
+        padding: 0;
+        text-align: left;
+        font-size: 30px;
+    }
+
+    .menu-toggle {
+        display: block;
+        flex: 0 0 auto;
+    }
+
+    menu {
+        display: none;
+        justify-content: center;
+    }
+
+    menu.open {
+        display: flex;
+    }
+
+    menu > ul {
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    menu > ul > li {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    menu > ul > li > a {
+        width: 100%;
+    }
+
+    .submenu {
+        position: static;
+        min-width: 0;
+        width: 100%;
+        padding-top: 6px;
+    }
+
+    .menu-dropdown::before {
+        display: none;
+    }
+
     .fighters-list,
     .fights-list {
         grid-template-columns: 1fr;
