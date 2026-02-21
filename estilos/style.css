@@ -127,7 +127,8 @@ menu > ul > li {
 }
 
 .menu-dropdown:hover .submenu,
-.menu-dropdown:focus-within .submenu {
+.menu-dropdown:focus-within .submenu,
+.menu-dropdown.open .submenu {
     display: flex;
 }
 
