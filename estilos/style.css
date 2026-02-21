@@ -94,6 +94,59 @@ menu > ul > li > a:hover {
     background-color: #ff000095;
     transform: translateY(-2px);
 }
+
+menu > ul > li {
+    position: relative;
+}
+
+.menu-dropdown > a::after {
+    content: " \25BE";
+    font-size: 12px;
+}
+
+.submenu {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 8px;
+    z-index: 20;
+}
+
+.menu-dropdown::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 10px;
+}
+
+.menu-dropdown:hover .submenu,
+.menu-dropdown:focus-within .submenu {
+    display: flex;
+}
+
+.submenu li a {
+    display: block;
+    padding: 6px 10px;
+    text-decoration: none;
+    background-color: #2a2a2a;
+    color: #f2f2f2;
+    border: 1px solid #3a3a3a;
+    border-radius: 6px;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.submenu li a:hover {
+    background-color: #ff000095;
+    transform: translateY(-2px);
+}
+
 menu > ul {
     list-style-type: none;
     display: flex;
