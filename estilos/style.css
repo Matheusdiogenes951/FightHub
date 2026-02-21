@@ -131,6 +131,7 @@ menu > ul > li {
     display: flex;
 }
 
+
 .submenu li a {
     display: block;
     padding: 6px 10px;
