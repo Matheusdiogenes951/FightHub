@@ -35,7 +35,7 @@ cd FightHub
 ## Deploy
 
 Projeto publicado em:
-- https://fighthub-jet.vercel.app/](https://fighthub-jet.vercel.app/views/home/index.html
+- https://fighthub-jet.vercel.app/views/home/index.html
 
 ## Estrutura de arquivos
 
